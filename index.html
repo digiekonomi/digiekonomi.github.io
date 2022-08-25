@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="font/WEB/stylesheet.css" />
     <style>
         :root {
-            --li-grey: #f0f0f0;
-            --da-grey: #f8f8f9;
+            --de-grey: #f0f0f0;
+            --li-grey: #f8f8f9;
             --blue: #002ea2;
         }
 
@@ -49,16 +49,18 @@
 
         .container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 2fr 3fr;
             grid-template-rows: 1fr;
             gap: 0px 0px;
             grid-auto-flow: row;
             height: 100vh;
+            background-color: var(--li-grey);
         }
 
         .container>.col+.col {
-            background-image: linear-gradient(to top, #002ea2ee, #f8f8f900), url(img/bg.webp);
+            background-image: linear-gradient(to top, #002ea2aa, #000000ee), url(img/bg.webp);
             clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 12% 50%, 0% 0%);
+            background-color: var(--blue);
             background-size: cover;
             background-position: center;
 
@@ -66,8 +68,7 @@
 
         .container>.col:nth-child(1) {
             max-width: 630px;
-            margin-left: 7%;
-            margin-right: 7%;
+            margin-left: min(12%, 7rem);
         }
 
         .container>.col:nth-child(1) p {
@@ -93,12 +94,13 @@
             font-size: 1.6rem;
             color: #002ea2;
         }
-
-        .col+.col {
-            /* background-image: url('https://images.unsplash.com/flagged/photo-1562599838-8cc871c241a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80');
-            background-size: cover;*/
+        .col {
             display: flex;
             flex-direction: column;
+            justify-content: center;
+        }
+
+        .col+.col {
             align-items: center;
             justify-content: center;
             padding-left: 3rem;
@@ -117,10 +119,15 @@
             justify-content: flex-end;
         }
 
+        .form h2 {
+            font-size: 3rem;
+        }
+
         .profile_card strong {
             color: #aaa;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 10pt;
+            text-shadow: #000 3px 1px;
         }
 
         .profile_card h4 {
@@ -289,14 +296,14 @@
         </div>
         <div class="col">
             <div class="profile_card">
-                <img class="profile" src="img/digiekonomi-jaakko-haapakoski.jpg" />
+                <img class="profile" alt="Digiekonomi - Jaakko Haapakoski" title="Digiekonomi - Jaakko Haapakoski" src="img/digiekonomi-jaakko-haapakoski.webp" />
                 <br />
                 <strong>DIGIEKONOMI</strong>
                 <H4>Jaakko Haapakoski</H4>
 
             </div>
             <div class="form">
-                <h2>Aloitetaan <br>tuloksenteko <br>tänään</h2>
+                <h2>Aloitetaan tuloksenteko tänään</h2>
                 <p>Jätä työsähköpostiosoitteesi ja palaan ehdotuksen kera mahdollisimman pian.*</p>
                 <form>
                     <input placeholder="tuloksia@tänne.fi" type="email" name="email" id="email">
