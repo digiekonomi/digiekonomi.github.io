@@ -9,6 +9,12 @@
     <meta name="description" content="">
     <link rel="stylesheet" href="font/WEB/stylesheet.css" />
     <style>
+        :root {
+            --li-grey: #f0f0f0;
+            --da-grey: #f8f8f9;
+            --blue: #002ea2;
+        }
+
         /* CSS Mini Reset */
 
         html,
@@ -51,12 +57,13 @@
         }
 
         .container>.col+.col {
-    background-image: url(https://embed.filekitcdn.com/e/6KbiLQbreB3mp9Nq7Xshpx/uAwXdTWuWaazTqYBxcHxAe);
-    //clip-path: polygon(0 0, 100% 0, 100% 100%, 7% 50%, 0% 100%);
-    //clip-path: polygon(0 0, 0% 100%, 15% 50%);
-    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 12% 50%, 0% 0%);
-    background-size: cover;
-    background-position: center;
+            background-image: linear-gradient(to top, #002ea2ee, #f8f8f900), url(https://embed.filekitcdn.com/e/6KbiLQbreB3mp9Nq7Xshpx/uAwXdTWuWaazTqYBxcHxAe);
+            //clip-path: polygon(0 0, 100% 0, 100% 100%, 7% 50%, 0% 100%);
+            //clip-path: polygon(0 0, 0% 100%, 15% 50%);
+            clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 12% 50%, 0% 0%);
+            background-size: cover;
+            background-position: center;
+
         }
 
         .container>.col:nth-child(1) {
@@ -72,7 +79,7 @@
 
         h1 {
             font-size: 3rem;
-
+            color: var(--blue);
         }
 
         h1,
@@ -137,15 +144,14 @@
             }
 
             .col+.col {
-                /* background-image: url('https://images.unsplash.com/flagged/photo-1562599838-8cc871c241a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80');
-            background-size: cover;*/
+                background: none;
                 display: flex;
                 flex-direction: column;
             }
         }
 
         @media screen and (max-width:960px) {
-            .container > .col:nth-child(1) {
+            .container>.col:nth-child(1) {
                 max-width: 630px;
                 order: 1;
             }
@@ -157,19 +163,7 @@
             height: 192px;
         }
 
-        .bg {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-size: cover;
-            pointer-events: none;
-            z-index: 1;
-            background-color: navy;
-            opacity: 0.75;
-            z-index: -1;
-        }
+
 
         .box.l-grey {
             background-color: #f8f8f9;
@@ -292,9 +286,10 @@
 
             <p>Eikä tämä ole mitään rakettitiedettä vaan Digiekonomi vie tuloksentekoa maalaisjärjellä ja vaikka kädestä
                 pitäen eteenpäin. Ja hihasta saa aina nykäistä, sillä ei ole pelkoa, että puku ryppyyntyy.</p>
+            
+            <div class="dots"></div>
         </div>
         <div class="col">
-            <div class="bg"></div>
             <div class="profile_card">
                 <img class="profile" src="img/digiekonomi-jaakko-haapakoski.jpg" />
                 <br />
@@ -307,6 +302,7 @@
                 <p>Jätä työsähköpostiosoitteesi ja palaan ehdotuksen kera mahdollisimman pian.*</p>
                 <form>
                     <input placeholder="tuloksia@tänne.fi" type="email" name="email" id="email">
+                    <br>
                     <button class="button" type="submit">Lähetä yhteydenottopyyntö</button>
                 </form>
                 <p><small>* Yhteydenotto ei sido sinua mihinkään.</small></p>
