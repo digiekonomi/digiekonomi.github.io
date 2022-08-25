@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="font/WEB/stylesheet.css" />
+    <style>
+        /* CSS Mini Reset */
+
+        html,
+        body,
+        div,
+        form,
+        fieldset,
+        legend,
+        label {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        th,
+        td {
+            text-align: left;
+            vertical-align: top;
+        }
+
+        html * {
+            font-family: 'Finlandica', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        img {
+            border: 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            height: 100vh;
+        }
+
+        .container>.col+.col {
+    background-image: url(https://embed.filekitcdn.com/e/6KbiLQbreB3mp9Nq7Xshpx/uAwXdTWuWaazTqYBxcHxAe);
+    //clip-path: polygon(0 0, 100% 0, 100% 100%, 7% 50%, 0% 100%);
+    //clip-path: polygon(0 0, 0% 100%, 15% 50%);
+    clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 12% 50%, 0% 0%);
+    background-size: cover;
+    background-position: center;
+        }
+
+        .container>.col:nth-child(1) {
+            max-width: 630px;
+            margin-left: 7%;
+            margin-right: 7%;
+        }
+
+        .container>.col:nth-child(1) p {
+            line-height: 1.6rem;
+            color: #6e717b;
+        }
+
+        h1 {
+            font-size: 3rem;
+
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-transform: uppercase;
+        }
+
+        h1+p {
+            font-size: 1.6rem;
+            color: #002ea2;
+        }
+
+        .col+.col {
+            /* background-image: url('https://images.unsplash.com/flagged/photo-1562599838-8cc871c241a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80');
+            background-size: cover;*/
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-left: 3rem;
+            color: #fff;
+            text-align: center;
+        }
+
+        .col+.col h2 {
+            text-transform: uppercase;
+        }
+
+        .profile_card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .profile_card strong {
+            color: #aaa;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 10pt;
+        }
+
+        .profile_card h4 {
+            margin: 0px;
+        }
+
+        @media screen and (max-width:768px) {
+            .container {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: 0px 0px;
+
+            }
+
+            .container>.col+.col {
+                clip-path: none;
+
+            }
+
+            .col+.col {
+                /* background-image: url('https://images.unsplash.com/flagged/photo-1562599838-8cc871c241a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80');
+            background-size: cover;*/
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width:960px) {
+            .container > .col:nth-child(1) {
+                max-width: 630px;
+                order: 1;
+            }
+        }
+
+        img.profile {
+            clip-path: circle(50%);
+            width: 192px;
+            height: 192px;
+        }
+
+        .bg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            pointer-events: none;
+            z-index: 1;
+            background-color: navy;
+            opacity: 0.75;
+            z-index: -1;
+        }
+
+        .box.l-grey {
+            background-color: #f8f8f9;
+        }
+
+        .box.d-grey {
+            background-color: #f0f0f0;
+        }
+
+        .button {
+            border: 0;
+            border-radius: 0;
+            background: 0 0;
+            color: inherit;
+            font: inherit;
+            line-height: normal;
+            overflow: visible;
+            padding: 0;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            transition: all .2s;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1.75;
+            display: inline-block;
+            padding: .5rem .75rem .375rem;
+            min-width: 6.5rem;
+            font-size: .875rem;
+            text-align: center;
+            border: .1875rem solid;
+            background: #002ea2;
+            color: #fff;
+            border-color: #002ea2
+        }
+
+        .button:active,
+        .button:focus,
+        .button:hover {
+            background: 0 0;
+            border-color: #002ea2;
+            color: #002ea2
+        }
+
+        .button__icon,
+        .button__icon .icon,
+        .button__icon.icon {
+            height: 1.5rem;
+            margin-right: .5rem;
+            margin-top: -.125rem;
+            position: relative;
+            width: 1.5rem
+        }
+
+        .button__label+.button__icon,
+        .button__label+.button__icon .icon,
+        .button__label+.button__icon.icon {
+            margin-left: .5rem;
+            margin-right: 0
+        }
+
+        .download-buttons {
+            margin-bottom: 1rem
+        }
+
+        .download-buttons .button {
+            margin-bottom: .3rem;
+            text-decoration: none;
+            position: relative
+        }
+
+        .download-buttons .button--small {
+            padding: 0;
+            min-width: 4rem;
+            min-height: 1.875rem;
+            padding-left: .25rem;
+            padding-right: .25rem
+        }
+
+        .download-buttons .button--default {
+            padding: .25rem .375rem;
+            min-width: 4rem;
+            min-height: 2.375rem
+        }
+
+        .dots {
+            background:
+                -moz-radial-gradient(blue 15%, transparent 16%),
+                -moz-radial-gradient(blue 15%, transparent 16%),
+                white;
+            background:
+                -webkit-radial-gradient(blue 15%, transparent 16%),
+                -webkit-radial-gradient(blue 15%, transparent 16%),
+                white;
+            background-position: 0 0, 8px 8px;
+
+            -webkit-background-size: 16px 16px;
+            -moz-background-size: 16px 16px;
+            background-size: 16px 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col">
+            <h1>Digiekonomin avulla enemmän mitattavia tuloksia</h1>
+            <p>Suurin osa yrityksen edustajista kokee haastavaksi kertoa kotisivujen hyödyistä ts. tuloksista.
+                Digiekonomi antaa
+                vastauksen tähän sekä muihin tuloksentekoa koskeviin kysymyksiin.</p>
+            <hr>
+            <h3>Ota yhteyttä - laaditaan yhdessä suunnitelma</h3>
+
+            <p>Käydään läpi mahdolliset nykyiset ratkaisut sekä tarpeet, joiden pohjalta laaditaan suunnitelma
+                liiketoimintaa tukevalle tuloksentekoratkaisulle.</p>
+
+            <p>Jo muutamassa päivässä tuloksentekokurssi kääntyy eteen- ja ylöspäin, jolloin sijoitetut eurot maksavat
+                itsensä takaisin. Mitä nopeammin toimit, niin sitä nopeammin saat myös tuloksia.</p>
+
+            <p>Eikä tämä ole mitään rakettitiedettä vaan Digiekonomi vie tuloksentekoa maalaisjärjellä ja vaikka kädestä
+                pitäen eteenpäin. Ja hihasta saa aina nykäistä, sillä ei ole pelkoa, että puku ryppyyntyy.</p>
+        </div>
+        <div class="col">
+            <div class="bg"></div>
+            <div class="profile_card">
+                <img class="profile" src="img/digiekonomi-jaakko-haapakoski.jpg" />
+                <br />
+                <strong>DIGIEKONOMI</strong>
+                <H4>Jaakko Haapakoski</H4>
+
+            </div>
+            <div class="form">
+                <h2>Aloitetaan <br>tuloksenteko <br>tänään</h2>
+                <p>Jätä työsähköpostiosoitteesi ja palaan ehdotuksen kera mahdollisimman pian.*</p>
+                <form>
+                    <input placeholder="tuloksia@tänne.fi" type="email" name="email" id="email">
+                    <button class="button" type="submit">Lähetä yhteydenottopyyntö</button>
+                </form>
+                <p><small>* Yhteydenotto ei sido sinua mihinkään.</small></p>
+                <p><small>Sähköpostiosoite tallennetaan markkinointijärjestelmäämme ja voit halutessasi koska tahansa
+                        poistaa
+                        sen.
+                        Osoitetta ei koskaan välitetä kolmannelle osapuolelle.</small> </p>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
