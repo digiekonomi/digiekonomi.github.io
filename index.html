@@ -94,6 +94,7 @@
             font-size: 1.6rem;
             color: #002ea2;
         }
+
         .col {
             display: flex;
             flex-direction: column;
@@ -103,7 +104,7 @@
         .col+.col {
             align-items: center;
             justify-content: center;
-            padding-left: 3rem;
+            //padding-left: 3rem;
             color: #fff;
             text-align: center;
         }
@@ -133,6 +134,7 @@
         .profile_card h4 {
             margin: 0px;
         }
+       
 
         @media screen and (max-width:768px) {
             .container {
@@ -176,7 +178,17 @@
 
         .box.d-grey {
             background-color: #f0f0f0;
+            color: #060A14;
         }
+
+        @media (min-width: 960px) {
+    .box {
+        padding-top:2rem;
+        padding-bottom: 3rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem
+    }
+}
 
         .button {
             border: 0;
@@ -270,6 +282,42 @@
             -moz-background-size: 16px 16px;
             background-size: 16px 16px;
         }
+
+        input[type=color],
+        input[type=date],
+        input[type=datetime-local],
+        input[type=datetime],
+        input[type=email],
+        input[type=month],
+        input[type=number],
+        input[type=password],
+        input[type=search],
+        input[type=tel],
+        input[type=text],
+        input[type=time],
+        input[type=url],
+        input[type=week],
+        select,
+        textarea {
+            max-width: 100%;
+            padding: .5rem 1rem;
+            color: #060a14;
+            background: #fff
+        }
+
+        input[type=email] {
+    background: 0 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    border: none;
+    border-bottom: .1875rem solid #002ea2;
+    padding-left: 0;
+    font-size: 1.125rem;
+    height: 3.5rem;
+    background:white;
+}
+
     </style>
 </head>
 
@@ -296,7 +344,8 @@
         </div>
         <div class="col">
             <div class="profile_card">
-                <img class="profile" alt="Digiekonomi - Jaakko Haapakoski" title="Digiekonomi - Jaakko Haapakoski" src="img/digiekonomi-jaakko-haapakoski.webp" />
+                <img class="profile" alt="Digiekonomi - Jaakko Haapakoski" title="Digiekonomi - Jaakko Haapakoski"
+                    src="img/digiekonomi-jaakko-haapakoski.webp" />
                 <br />
                 <strong>DIGIEKONOMI</strong>
                 <H4>Jaakko Haapakoski</H4>
@@ -304,21 +353,23 @@
             </div>
             <div class="form">
                 <h2>Aloitetaan tuloksenteko tänään</h2>
-                <p>Jätä työsähköpostiosoitteesi ja palaan ehdotuksen kera mahdollisimman pian.*</p>
-                <form>
-                    <input placeholder="tuloksia@tänne.fi" type="email" name="email" id="email">
-                    <br>
-                    <button class="button" type="submit">Lähetä yhteydenottopyyntö</button>
-                </form>
-                <p><small>* Yhteydenotto ei sido sinua mihinkään.</small></p>
-                <p><small>Sähköpostiosoite tallennetaan markkinointijärjestelmäämme ja voit halutessasi koska tahansa
-                        poistaa
-                        sen.
-                        Osoitetta ei koskaan välitetä kolmannelle osapuolelle.</small> </p>
-
+                    <p>Jätä työsähköpostiosoitteesi ja palaan ehdotuksen kera mahdollisimman pian.*</p>
+                    <form>
+                        <input placeholder="tuloksia@tänne.fi" type="email" name="email" id="email">
+                        <br>
+                        <button class="button" type="submit">Lähetä yhteydenottopyyntö</button>
+                    </form>
+                    <p><small>* Yhteydenotto ei sido sinua mihinkään.</small></p>
+                    <p><small>Sähköpostiosoite tallennetaan markkinointijärjestelmäämme ja voit halutessasi koska tahansa
+                            poistaa
+                            sen.
+                            Osoitetta ei koskaan välitetä kolmannelle osapuolelle.</small> </p>
+    
+                </div>
             </div>
         </div>
     </div>
+    
 </body>
 
 </html>
